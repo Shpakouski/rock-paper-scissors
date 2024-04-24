@@ -40,7 +40,6 @@ class Rules
     {
         for ($x = 1; $x <= $this->getMovesCount(); $x++) {
             for ($y = 1; $y <= $this->getMovesCount(); $y++) {
-                $this->rules[$x][$y] = 0 <=> (($x - $y + $this->getMidpoint() + $this->getMovesCount()) % $this->getMovesCount() - $this->getMidpoint());
                 $this->rules[$x][$y] = match (0 <=> (($x - $y + $this->getMidpoint() + $this->getMovesCount()) % $this->getMovesCount() - $this->getMidpoint())) {
                     1 => Result::WIN->value,
                     0 => Result::DRAW->value,
